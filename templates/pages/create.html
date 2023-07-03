@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .Header {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 150px;
+      }
+      .Nav {
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1; /* 새로운 스타일 속성 */
+      }
+      .title {
+        color: #333;
+        font-size: 40px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 48px;
+        margin-left: 73px;
+      }
+      .Navar {
+        margin: 25px;
+        color: #858a8f;
+        font-size: 20px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      .LogButton {
+        width: 134px;
+        height: 57px;
+        flex-shrink: 0;
+        background-color: #0176ff;
+        color: #fff;
+        font-size: 20px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 26px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 100px;
+        margin-left: 100px;
+      }
+      .logTitle {
+        color: #333;
+        font-size: 40px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 48px;
+        margin: 143px;
+      }
+      .subname {
+        color: #858a8f;
+        font-size: 18px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+      }
+      .texts {
+        width: 453px;
+        height: 64px;
+        flex-shrink: 0;
+      }
+      .texts::placeholder {
+        color: #aab0b7;
+        font-size: 20px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      .oneButton {
+        width: 455px;
+        height: 66px;
+        flex-shrink: 0;
+        background-color: #377dff;
+        color: #fff;
+        font-size: 20px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        margin-top: 50px;
+        border: none;
+        border-radius: 5px;
+      }
+      .twoButton {
+        width: 455px;
+        height: 66px;
+        flex-shrink: 0;
+        background-color: #e5f1ff;
+        color: #377dff;
+        font-size: 20px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        border: none;
+        border-radius: 5px;
+      }
+      .tname {
+        color: #858a8f;
+        font-size: 20px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+      }
+      .bodys {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Header">
+      <a href="/">
+        <p class="title">VisionSoft</p>
+      </a>
+
+      <div class="Nav">
+        <p class="Navar">Home</p>
+        <p class="Navar">Product</p>
+        <p class="Navar">Inquiry</p>
+      </div>
+      <div class="main">
+        <button class="LogButton">Log In</button>
+      </div>
+    </div>
+    <div class="bodys">
+      <p class="logTitle">Create your account</p>
+
+      <form>
+        <p class="subname">Name</p>
+        <input type="text" placeholder="nick name" class="texts" />
+        <p class="subname">Email Adress</p>
+        <input type="text" placeholder="web@gmail.com" class="texts" />
+        <p class="subname">Password</p>
+        <input type="text" placeholder="••••••••••" class="texts" /> <br />
+        <button class="oneButton">Create my account</button>
+        <p class="tname">OR</p>
+        <button class="twoButton">Sign Up with Google</button>
+      </form>
+      <a href="/sign/">
+        <p class="tname">Already have an account? Sign In</p>
+      </a>
+    </div>
+  </body>
+</html>
