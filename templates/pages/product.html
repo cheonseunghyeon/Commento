@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            padding: 0 300px;
+        }
+        .Header {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 50px;
+        }
+
+        .Nav {
+            display: flex;
+            justify-content: flex-end;
+            flex-grow: 1;
+            /* 새로운 스타일 속성 */
+        }
+
+        .title {
+            color: #333;
+            font-size: 40px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 48px;
+            margin-left: 73px;
+        }
+
+        .Navar {
+            margin: 25px;
+            color: #858a8f;
+            font-size: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        .LogButton {
+            width: 134px;
+            height: 57px;
+            flex-shrink: 0;
+            background-color: #0176ff;
+            color: #fff;
+            font-size: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+
+        .main {}
+
+        .main_title {
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            width: 977px;
+            height: 194px;
+            flex-direction: column;
+            flex-shrink: 0;
+            color: #333;
+            font-size: 80px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 97px;
+        }
+
+        .sub_title {
+            margin: 0 auto;
+            margin-top: 33px;
+            color: #858a8f;
+            text-align: center;
+            font-size: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 35px;
+            display: flex;
+            width: 813px;
+            height: 70px;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .image-container {
+            margin-top: 150px;
+            position: relative;
+        }
+        .catebox{
+            width: 107px;
+            height: 107px;
+            background-color: #EDF7FF;
+            border: 7px;
+            margin: 20px;
+            margin-bottom: 0px;
+            border-radius: 7px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .catego{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 40px;
+        }
+        .cateblock{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .catefont{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .leftmain{
+            display: flex;
+            width: 183px;
+            height: 150px;
+            margin-top: 30px;
+            margin-left: 20px;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+        }
+        .mainmain {
+        position: relative;
+        width: 200px; /* 이미지의 가로 크기에 맞게 조정 */
+        height: 200px; /* 이미지의 세로 크기에 맞게 조정 */
+        }
+
+        .img1{
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .img2{
+            z-index: 2;
+            position: absolute;
+            top: 120;
+            left: 120;
+            margin-left: 90px;
+            margin-top: 100px;
+        }
+        .rightmain{
+            float: right;
+            margin-left: 450px;
+        }
+        .button1{
+            background-color: #fff;
+            border:#f0f0f0 2px solid;
+            width: 120px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 50px;
+        }
+        .button2{
+            background-color: #fff;
+            border:#f0f0f0 2px solid;
+            width: 120px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 50px;
+        }
+        .button1:hover{
+            border: #e73c17 2px solid;
+            color: #e73c17;
+        }
+        .button2:hover{
+            border: #e73c17 2px solid;
+            color: #e73c17;
+        }
+        .proTitle{
+            color: #333;
+            font-size: 40px;
+            margin-top: 100px;
+            margin-bottom: 20px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 45px;
+        }
+        .li{
+            color: #191919;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+      a {
+        text-decoration: none;
+      }
+      a:visited {
+  color: inherit;
+}
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+
+      <a href="/">
+        <p class="title">VisionSoft</p>
+      </a>
+
+        <div class="Nav">
+            <p class="Navar">Home</p>
+            <p class="Navar">Product</p>
+            <p class="Navar">Inquiry</p>
+        </div>
+        <div class="main">
+            <a href="/sign/">
+                <button class="LogButton">Log In</button>
+            </a>
+        </div>
+    </div>
+    <hr style="border:#f0f0f0 2px solid;" />
+    <div>
+        <div class="catego">
+            <div class="cateblock">
+                <div class="catebox">ALL</div>
+                  <p class="catefont">전체보기</p>
+                </div>
+            <div class="cateblock">
+                <div class="catebox"></div>
+                    <p class="catefont">카테고리1</p>
+                </div>
+            <div class="cateblock">
+                <div class="catebox"></div>
+                    <p class="catefont">카테고리2</p>
+                </div>
+            <div class="cateblock">
+                <div class="catebox"></div>
+                    <p class="catefont">카테고리3</p>
+                </div>
+            <div class="cateblock">
+                <div class="catebox"></div>
+                    <p class="catefont">카테고리4</p>
+                </div>
+            <div class="cateblock">
+                <div class="catebox"></div>
+                <p class="catefont">카테고리5</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="leftmain">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+        </div>
+        <div class="mainmain">
+            <img src="https://i.ibb.co/mvFCmXB/back.png" class="img1" alt="back" border="0">
+            <img src="https://i.ibb.co/2dK3nXX/se.png"  class="img2" alt="se" border="0">
+        </div>
+        <div class="rightmain">
+            <p class="proTitle">Product Name</p>
+            <img src="https://i.ibb.co/ZxgRRWF/star.png" alt="star" border="0" style="height: 30px; width: 150px; margin-top: 0px;">
+            <ul>
+                <li class="li">Product explanation1</li>
+                <li class="li">Product explanation2</li>
+                <li class="li">Product explanation3</li>
+                <li class="li">Product explanation4</li>
+                <li class="li">Product explanation5</li>
+
+                <hr style="border:#f0f0f0 1px solid; margin: 20px auto;" />
+                <div class="catego">
+                    <div class="button1">
+                        <p>Review</p>
+                    </div>
+                    <div class="button2">
+                        <p>Inquriy</p>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="ko">-->
+<!--<head>-->
+<!-- <meta charset="UTF-8">-->
+<!-- <title>메인 페이지</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<nav>-->
+<!--<a href="/company/">company info</a>-->
+<!-- <a href="/mysite/">product</a>-->
+<!--  <a href="/create/">create</a>-->
+<!-- <a href="/sign/">sign</a>-->
+<!--</nav>-->
+<!--<h1>메인 페이지입니다.</h1>-->
+<!--</body>-->
+<!--</html>-->

@@ -12,3 +12,7 @@ def create(request):
 
 def sign(request):
  return render(request, 'pages/sign.html')
+
+
+def product(request):
+ return render(request, 'pages/product.html')
