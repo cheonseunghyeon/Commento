@@ -5,12 +5,7 @@
  <title>mysite</title>
 </head>
 <body>
-{% extends 'base.html' %}
-{% block content %}
 <h1>mysite</h1>
-<h2>{{ content_list.title }}</h2>
-<div>
- {{ content_list.content }}
 {% if content_list %}
  {% for content in content_list %}
  <hr/>
@@ -20,6 +15,5 @@
 {% else %}
  <p>content 가 없습니다.</p>
 {% endif %}
-{% endblock %}
 </body>
 </html>
