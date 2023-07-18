@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
- <meta charset="UTF-8">
- <title>mysite</title>
-</head>
-<body>
-{% extends 'base.html' %}
-{% block content %}
-<h1>mysite</h1>
-<h2>{{ content_list.title }}</h2>
-<div>
- {{ content_list.content }}
-{% if content_list %}
- {% for content in content_list %}
- <hr/>
- <h3><a href="/mysite/{{ content.id }}/">{{ content.title }}</a></h3>
- <h5>{{ content.content}}</h5>
- {% endfor %}
-{% else %}
- <p>content 가 없습니다.</p>
-{% endif %}
-{% endblock %}
-</body>
+        {% extends 'base.html' %}
+        {% block content %}
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Small Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    </head>
+    <body>
+
+
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+
+                {% if content_list %}
+                 {% for content in content_list %}
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">{{ content.title }}</h1>
+                    <p>{{ content.content | truncatewords:30 }}</p>
+                    <a class="btn btn-primary" href="{% url 'detail' content.id %}">상품 상세보기</a>
+                </div>
+
+                 {% endfor %}
+                {% else %}
+                    <p>content 가 없습니다.</p>
+                {% endif %}
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+            </div>
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+                {% if content_list %}
+                 {% for content in content_list %}
+                 <hr/>
+                 <h3><a href="/mysite/{{ content.id }}/">{{ content.title }}</a></h3>
+                 <h5>{{ content.content}}</h5>
+                 {% endfor %}
+                {% else %}
+                 <p>content 가 없습니다.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endblock %}
+    </body>
 </html>
