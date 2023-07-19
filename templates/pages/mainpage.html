@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    <div class="mainpage-main">
+        <p class="main_title">This is a website that introduces the company</p>
+        <p class="sub_title">
+            A brief introduction about the company you want to advertise goes here.
+        </p>
+        <div class="image-container">
+            <img src="{% static 'img/mainback.png' %}" />
+            <a href="/company/">More Detail →</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
  <meta charset="UTF-8">
@@ -13,4 +41,4 @@
 </nav>
 <h1>메인 페이지입니다.</h1>
 </body>
-</html>
+</html> -->

@@ -10,30 +10,36 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <style>
+            
+        </style>
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     </head>
     <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
-                         {% if user.is_authenticated %}
-                             <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{{ user.username }} (logout)</a></li>
-                        {% else %}
-                             <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
-                        {% endif %}
-
-                    </ul>
-                </div>
+        <div class="Header">
+        
+            <a href="/">
+                <p class="title">VisionSoft</p>
+            </a>
+        
+            <div class="Nav">
+                <a href="/"><p class="Navar">Home</p></a>
+                <a href="/mysite/"><p class="Navar">Product</p></a>
+                <a href="/inquiry/"><p class="Navar">Inquiry</p></a>
             </div>
-        </nav>
+            <div class="main">
+                <a href="/sign/">
+                    <button class="LogButton">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{{ user.username }} (logout)</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
+                        {% endif %}
+                    </button>
+                </a>
+            </div>
+        </div>
+        <hr style="border:#f0f0f0 2px solid;" />
+        <div>
     </body>
 </html>

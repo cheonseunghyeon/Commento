@@ -1,37 +1,86 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{ content_list.title }}</h2>
-<div>
-    {{ content_list.content }}
+{% load static %}
+<script>
+    function changeContent(target) {
+        var description = document.getElementById("description");
+        var specification = document.getElementById("specification");
+        var reviews = document.getElementById("reviews");
+        var changeDiv = document.getElementById("changeDiv");
+
+        if (target.id === "description") {
+            changeDiv.innerHTML = "<h2>{{ content_list.title }}</h2><div>{{ content_list.content }}</div>";
+        } else if (target.id === "specification") {
+            changeDiv.innerHTML = "<h2>Specification</h2><div>Specification content goes here.</div>";
+        } else if (target.id === "reviews") {
+            changeDiv.innerHTML = "<h2>Reviews</h2><div>Reviews content goes here.</div>";
+        }
+    }
+</script>
 </div>
 <section class="mb-5">
-    <div class="card bg-light">
-        <div class="card-body">
-            <form method="post" class="mb-4" action="{% url 'comment_create' content_list.id %}">
-                {% csrf_token %}
-                <textarea id="content" name="content" class="form-control" rows="3"
-                placeholder="내용을 입력해주세요."></textarea>
-                <button type="submit" class="btn btn-primary">submit</button>
-            </form>
-            <!--     content_list 안에 있는 comment 들을 모두 가져오는 코드       -->
-             {% for comment in content_list.comment_set.all %}
-             <div class="d-flex">
-                <div class="ms-3">
-                    <div class="fw-bold">{{ comment.author.username }} &nbsp&nbsp {{ comment.create_date }}
-                        {% if comment.create_date != comment.modify_date %}
-                         / 수정일자: {{ comment.modify_date }}
-                         {% endif %}
-                         {% if request.user == comment.author %}
-                         <a href="{% url 'comment_update' comment.id %}" class="btn btn-sm btn-outlinesecondary">수정</a>
-                         <a href="{% url 'comment_delete' comment.id %}" class="btn btn-sm btn-outlinesecondary">삭제</a>
-                         {% endif %}
+    <div class="mainpage-main">
+        <div class="detail_mainimg">
+            <img src="{% static 'img/z1.png' %}" />
+        </div>
+        <div class="detail_sub">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+            <img src="https://i.ibb.co/PM6hkXM/me.png" alt="me" border="0">
+        </div>
+        <div class="detail_sub">
+            <p id="description" onclick="changeContent(this)">Description</p>
+            <p id="specification" onclick="changeContent(this)">Specification</p>
+            <p id="reviews" onclick="changeContent(this)">Reviews</p>
+        </div>
+        <div id="changeDiv" class="change">
+            <h2>{{ content_list.title }}</h2>
+            <div>
+                {{ content_list.content }}
+                <form method="post" class="mb-4" action="{% url 'comment_create' content_list.id %}">
+                    {% csrf_token %}
+                    <textarea id="content" name="content" class="form-control" rows="3"
+                        placeholder="내용을 입력해주세요."></textarea>
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </form>
+                <!-- content_list 안에 있는 comment 들을 모두 가져오는 코드 -->
+                {% for comment in content_list.comment_set.all %}
+                <div class="d-flex">
+                    <div class="ms-3">
+                        <div class="fw-bold">{{ comment.author.username }} &nbsp&nbsp {{ comment.create_date }}
+                            {% if comment.create_date != comment.modify_date %}
+                            / 수정일자: {{ comment.modify_date }}
+                            {% endif %}
+                            {% if request.user == comment.author %}
+                            <a href="{% url 'comment_update' comment.id %}"
+                                class="btn btn-sm btn-outlinesecondary">수정</a>
+                            <a href="{% url 'comment_delete' comment.id %}"
+                                class="btn btn-sm btn-outlinesecondary">삭제</a>
+                            {% endif %}
+                        </div>
+                        {{ comment.content }}
                     </div>
-                    {{ comment.content }}
                 </div>
-             </div>
-            <br/>
-            {% endfor %}
+                <br />
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Content Switching Script -->
+<script>
+    function changeContent(target) {
+        // 모든 content를 숨김
+        var contents = document.getElementsByClassName('content');
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = 'none';
+        }
+
+        // 클릭한 요소에 해당하는 content를 보여줌
+        var contentId = target.id.toLowerCase();
+        document.getElementById('content-' + contentId).style.display = 'block';
+    }
+</script>
 {% endblock %}

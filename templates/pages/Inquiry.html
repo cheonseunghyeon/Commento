@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    <div class="inqupage-main">
+        <div class="inqupage-left">
+            <P class="inqu_maintext">자주 묻는 질문</P>
+            <div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="inqupage-right">
+            <P class="inqu_maintext2"></P>
+            <div class="inqu_block">
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/emo1.png' %}" />
+                    <p>신고 문의 제안하기</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/emo2.png' %}" />
+                    <p>나의 문의 내역</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inqupage-main">
+        <div class="inqupage2-left">
+            <P class="inqu_maintext">최신 문의 내용</P>
+            <div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+                <div class="inqu_questvar">
+                    <img src="{% static 'img/chec.png' %}" />
+                    <p>질문 사항</p>
+                </div>
+    
+            </div>
+        </div>
+            <div class="inqupage2-left">
+                <P class="inqu_maintext">카테고리 별 문의 내용</P>
+                <div>
+                    <div class="inqu_questvar">
+                        <img src="{% static 'img/chec.png' %}" />
+                        <p>질문 사항</p>
+                    </div>
+                    <div class="inqu_questvar">
+                        <img src="{% static 'img/chec.png' %}" />
+                        <p>질문 사항</p>
+                    </div>
+                    <div class="inqu_questvar">
+                        <img src="{% static 'img/chec.png' %}" />
+                        <p>질문 사항</p>
+                    </div>
+                    <div class="inqu_questvar">
+                        <img src="{% static 'img/chec.png' %}" />
+                        <p>질문 사항</p>
+                    </div>
+            
+                </div>
+            </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

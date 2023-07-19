@@ -14,46 +14,121 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        <script>
+            function selectCategory() {
+                var selectedCategory = document.getElementById("categorySelect").value;
+                // 선택된 카테고리에 따라 원하는 동작 수행
+                console.log(selectedCategory); // 선택된 카테고리 출력 예시
+            }
+        </script>
     </head>
     <body>
+        <div class="catego">
+            <div class="cateblock">
+                <div class="catebox">
+                    <p class="catefont">전체보기</p>
+                </div> 
+            </div>
 
-
-        <!-- Page Content-->
-        <div class="container px-4 px-lg-5">
-            <!-- Heading Row-->
-            <div class="row gx-4 gx-lg-5 align-items-center my-5">
-
-                {% if content_list %}
-                 {% for content in content_list %}
-                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
-                <div class="col-lg-5">
-                    <h1 class="font-weight-light">{{ content.title }}</h1>
-                    <p>{{ content.content | truncatewords:30 }}</p>
-                    <a class="btn btn-primary" href="{% url 'detail' content.id %}">상품 상세보기</a>
+            <div class="cateblock">
+                <div class="catebox">
+                    <img src="{% static 'img/e1.png' %}" />
+                    <p class="catefont">냉장고</p>
                 </div>
+            </div>
+            <div class="cateblock">
+                <div class="catebox">
+                    <img src="{% static 'img/e2.png' %}" />
+                    <p class="catefont">TV</p>
+                </div>
+            </div>
+            <div class="cateblock">
+                <div class="catebox">
+                    <img src="{% static 'img/e3.png' %}" />
+                    <p class="catefont">에어콘</p>
+                </div>
+            </div>
 
-                 {% endfor %}
-                {% else %}
-                    <p>content 가 없습니다.</p>
-                {% endif %}
+            <div class="cateblock">
+                <div class="catebox">
+                    <img src="{% static 'img/e4.png' %}" />
+                    <p class="catefont">스마트폰</p>
+                </div>
             </div>
-            <!-- Call to Action-->
-            <div class="card text-white bg-secondary my-5 py-4 text-center">
-                <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
-            </div>
-            <!-- Content Row-->
-            <div class="row gx-4 gx-lg-5">
-                {% if content_list %}
-                 {% for content in content_list %}
-                 <hr/>
-                 <h3><a href="/mysite/{{ content.id }}/">{{ content.title }}</a></h3>
-                 <h5>{{ content.content}}</h5>
-                 {% endfor %}
-                {% else %}
-                 <p>content 가 없습니다.</p>
-                {% endif %}
+            <div class="cateblock">
+                <div class="catebox">
+                    <img src="{% static 'img/e5.png' %}" />
+                    <p class="catefont">가전제품</p>
+                </div>
             </div>
         </div>
+        </div>
+            <hr style="border:#f0f0f0 2px solid;" />
+        <!-- Page Content-->
+        <div>
+            
+            <!-- Heading Row-->
+            <div class="top-mains">
+                <div class="sec-middle-text2">최고 인기 상품 TOP 5</div>
+                <div class="main">
+                    <div class="leftmain">
+                    <img src="{% static 'img/z1.png' %}" />
+                    <img src="{% static 'img/z2.png' %}" />
+                    <img src="{% static 'img/z3.png' %}" />
+                    <img src="{% static 'img/z4.png' %}" />
+                </div>
+                <div class="mainmain">
+                    <img src="https://i.ibb.co/mvFCmXB/back.png" class="img1" alt="back" border="0">
+                    <img src="{% static 'img/z5.png' %}" class="img2" alt="se" border="0">
+                </div>
+                <div class="rightmain">
+                    <p class="proTitle">Product Name</p>
+                    <img src="https://i.ibb.co/ZxgRRWF/star.png" alt="star" border="0"
+                        style="height: 30px; width: 150px; margin-top: 0px;">
+                    <ul>
+                        <li class="li">Product explanation1</li>
+                        <li class="li">Product explanation2</li>
+                        <li class="li">Product explanation3</li>
+                        <li class="li">Product explanation4</li>
+                        <li class="li">Product explanation5</li>
+                
+                        <hr style="border:#f0f0f0 1px solid; margin: 20px auto;" />
+                        <div class="catego">
+                            <div class="button1">
+                                <a href="/review/">review22</a>
+                            </div>
+                            <div class="button2">
+                                <p>Inquriy</p>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <div class="sec-middle-text">여름 특가 상품</div>
+            <div class="sec-mains">
+                
+                {% if content_list %}
+                {% for content in content_list %}
+                <div class="block-col">
+                    <img src="{% static 'img/z' %}{{ forloop.counter }}.png" />
+                    <h1 class="main-title">{{ content.title }}</h1>
+                    <p>{{ content.content | truncatewords:30 }}</p>
+                    <a class="main-block" href="{% url 'detail' content.id %}">Product Detail</a>
+                </div>
+            
+                {% endfor %}
+                {% else %}
+                <p>content 가 없습니다.</p>
+                {% endif %}
+            </div>
+
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+
+            </div>
+        </div>
+                    
         {% endblock %}
     </body>
 </html>

@@ -1,14 +1,37 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 <html lang="ko">
 <head>
  <meta charset="UTF-8">
  <title>회사소개</title>
 </head>
-<body>
-{% extends 'base.html' %}
-{% block content %}
-<h1>메인 페이지입니다.</h1>
-{% endblock %}
+{% load static %}
 
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    <div class="compage-main">
+        <img src="{% static 'img/companyimg.png' %}" />
+        <div class="combottom">
+            <p class="main_title">Visionsoft is a young innovation company</p>
+            <p class="sub_title">
+                We are a leading provider of innovative electronic solutions, catering to customers worldwide.
+            </p>
+            <p class="sub_title">
+                Our mission is to deliver cutting-edge technology and exceptional user experiences through our range of electronic
+                products.
+                With a strong commitment to quality and reliability, we strive to exceed customer expectations and stay at the
+                forefront of the industry.<br />
+                From smartphones and smart home devices to advanced audio systems, we offer a diverse portfolio of products that
+                enhance everyday life.
+            </p>
+        </div>
+    </div>
+    
 </body>
+{% endblock %}
 </html>

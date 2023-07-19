@@ -2,24 +2,23 @@
 
 {% block content %}
 
-{% if form.errors %}
-<p>아이디 또는 비밀번호가 틀립니다. 다시 시도해주세요.</p>
-{% endif %}
+<div class="bodys">
+    <p class="logTitle">SIGN IN</p>
 
-<form method="post" action="{% url 'accounts:login' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+    <form method="post" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+        <p class="subname">Email Address</p>
+        <input type="text" name="username" placeholder="web@gmail.com" class="texts" />
+        <p class="subname">Password</p>
+        <input type="password" name="password" placeholder="••••••••••" class="texts" /> <br />
+        <button type="submit" class="oneButton">Sign in</button>
+        <p class="tname">OR</p>
+        <button class="twoButton">Sign Up with</button>
+    </form>
+    <a href="/create/">
+        <p class="tname2">Do not have an account? Sign Up</p>
+    </a>
+</div>
 
-<input type="submit" value="login">
-</form>
-<a href="{% url 'accounts:signup' %}">signup</a>
 {% endblock %}
+

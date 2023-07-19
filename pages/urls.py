@@ -24,4 +24,6 @@ urlpatterns = [
  path('create/', views.create),
  path('sign/', views.sign),
  path('product/', views.product),
+ path('review/', views.review),
+ path('inquiry/', views.inquiry),
 ]

@@ -16,3 +16,10 @@ def sign(request):
 
 def product(request):
  return render(request, 'pages/product.html')
+
+
+def review(request):
+ return render(request, 'pages/review.html')
+
+def inquiry(request):
+ return render(request, 'pages/inquiry.html')
